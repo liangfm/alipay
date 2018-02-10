@@ -1,0 +1,153 @@
+2018-02-08 16:32:56  {"product_code":"FAST_INSTANT_TRADE_PAY","body":"官方个回复哈","subject":"测试","total_amount":"0.01","out_trade_no":"20182903234445"}
+2018-02-08 16:32:56  response: 'https://openapi.alipaydev.com/gateway.do?alipay_sdk=alipay-sdk-php-20161101&app_id=2016091200495132&biz_content=%7B%22product_code%22%3A%22FAST_INSTANT_TRADE_PAY%22%2C%22body%22%3A%22%E5%AE%98%E6%96%B9%E4%B8%AA%E5%9B%9E%E5%A4%8D%E5%93%88%22%2C%22subject%22%3A%22%E6%B5%8B%E8%AF%95%22%2C%22total_amount%22%3A%220.01%22%2C%22out_trade_no%22%3A%2220182903234445%22%7D&charset=UTF-8&format=json&method=alipay.trade.page.pay&notify_url=http%3A%2F%2Fshop.mylawcase.cn%2Fmodules%2Falipay%2Ftestpay%2Fnotify_url.php&return_url=http%3A%2F%2Fshop.mylawcase.cn%2Fmodules%2Falipay%2Ftestpay%2Freturn_url.php&sign=YOeFs3SOwvOk2aI9A0e6qaeK6qifBsS%2FSrnSqr46LXDg%2FmNbxrwTBH0P77kybmvX37hRVx4VJAGNHibFQmFt37g4otL%2BJevjWDbdtfFXhNPbmeQDl%2B02Aci5lB66puiVdITVvDY%2FqYNUiwDujtt80YLBIEXMlUFAHhh4Jldv498012uSRXohqzZc5uC2ZT8JnfmRr%2FkRGqNT2z44szNmyhidPdxBbUF8fLi6buPOb0jSfRAoaQxm4%2F%2BZSnhncxvlMbsb9KjsxgnXPvlzPXcdDt8dQDPc8d38mDmNI%2BKvm1vorn7HvqHSgnLxPSOmoDWmvFXxLn1jOEJ9VI2WlbUdxw%3D%3D&sign_type=RSA2&timestamp=2018-02-08+16%3A32%3A56&version=1.0'
+2018-02-08 16:48:24  {"product_code":"FAST_INSTANT_TRADE_PAY","body":"官方个回复哈","subject":"测试","total_amount":"0.01","out_trade_no":"20182904810619"}
+2018-02-08 16:48:24  response: '<form id=\'alipaysubmit\' name=\'alipaysubmit\' action=\'https://openapi.alipaydev.com/gateway.do?charset=UTF-8\' method=\'POST\'><input type=\'hidden\' name=\'biz_content\' value=\'{"product_code":"FAST_INSTANT_TRADE_PAY","body":"官方个回复哈","subject":"测试","total_amount":"0.01","out_trade_no":"20182904810619"}\'/><input type=\'hidden\' name=\'app_id\' value=\'2016091200495132\'/><input type=\'hidden\' name=\'version\' value=\'1.0\'/><input type=\'hidden\' name=\'format\' value=\'json\'/><input type=\'hidden\' name=\'sign_type\' value=\'RSA2\'/><input type=\'hidden\' name=\'method\' value=\'alipay.trade.page.pay\'/><input type=\'hidden\' name=\'timestamp\' value=\'2018-02-08 16:48:24\'/><input type=\'hidden\' name=\'alipay_sdk\' value=\'alipay-sdk-php-20161101\'/><input type=\'hidden\' name=\'notify_url\' value=\'http://shop.mylawcase.cn/modules/alipay/testpay/notify_url.php\'/><input type=\'hidden\' name=\'return_url\' value=\'http://shop.mylawcase.cn/modules/alipay/testpay/return_url.php\'/><input type=\'hidden\' name=\'charset\' value=\'UTF-8\'/><input type=\'hidden\' name=\'sign\' value=\'gxEg4llSIIWFjhlWJNHahl50luA7O27WQp5aF3nEY4yWa4VAIv0LxNSPETOLHva6V2ehCsgNIjsdkQGtXCFBDVNMXV5UXTSVocav9lWaR7/ZOF+d9LIPnQg6ZEFVGhnLRJlG5OG6VEVMjDWMHalA0STa7zUrfbWw4JnOF5YimuA1Kwsm6g9pe9nBMR0FSYRl02ulBzf2Tq3NHPlzQTs5KRKzY4+DzfVFrZm/FWfwofdyhchFpHbHXk6N70AP584SSDXVVPuNQ7Ycg8BmYgE5MfPkat/t9MrbzCHWRN/jHTyYCmJQ3e2iFgCh3TxQE5eByWeHpDYXbC8cMoxmFrSWtg==\'/><input type=\'submit\' value=\'ok\' style=\'display:none;\'\'></form><script>document.forms[\'alipaysubmit\'].submit();</script>'
+2018-02-08 16:50:22  array (
+  'gmt_create' => '2018-02-09 00:49:56',
+  'charset' => 'UTF-8',
+  'gmt_payment' => '2018-02-09 00:50:10',
+  'notify_time' => '2018-02-09 00:50:11',
+  'subject' => '测试',
+  'sign' => 'NPdvW4X5OcxStXQ0mESOeZ/iSs9EJLcWSyteR061QGtmCFN5D1u4HlrTPsknTE+L1eX7L9Yw0PiSNeDciMrpf1y49uFJ01LPnXb1y1mUIEAHU6zHlu8UsI82Nx5DcbibrHF55q3ZzrZ+hXOIpD/U1jmmm7w5Q4xGap9jE7R6CN7YBr3hiyAEKBckqfTYU0n1Jg9ZktxDNmflg38HInK2D5ACb3SeqhaGURD+5UEtM2sNtA36+v1NDd32bwv7TFwXvMg01g3pmMute1MyBWyqjhg6IUOpSeo9vokKJ3Z6O6FaECcTM1bAjG1QwI5HRJ7Z0/Uxv79ZJ+gDbFpXS5gZUg==',
+  'buyer_id' => '2088102175676555',
+  'body' => '官方个回复哈',
+  'invoice_amount' => '0.01',
+  'version' => '1.0',
+  'notify_id' => 'f3b2a89b7f8af8bbeaf1afb32f13aeek8u',
+  'fund_bill_list' => '[{"amount":"0.01","fundChannel":"ALIPAYACCOUNT"}]',
+  'notify_type' => 'trade_status_sync',
+  'out_trade_no' => '20182904810619',
+  'total_amount' => '0.01',
+  'trade_status' => 'TRADE_SUCCESS',
+  'trade_no' => '2018020921001004550200426580',
+  'auth_app_id' => '2016091200495132',
+  'receipt_amount' => '0.01',
+  'point_amount' => '0.00',
+  'app_id' => '2016091200495132',
+  'buyer_pay_amount' => '0.01',
+  'sign_type' => 'RSA2',
+  'seller_id' => '2088102175316125',
+)
+2018-02-08 16:51:02  {"product_code":"FAST_INSTANT_TRADE_PAY","body":"官方个回复哈","subject":"测试韩国和江满江红还根据","total_amount":"0.01","out_trade_no":"20182904810619"}
+2018-02-08 16:51:02  response: '<form id=\'alipaysubmit\' name=\'alipaysubmit\' action=\'https://openapi.alipaydev.com/gateway.do?charset=UTF-8\' method=\'POST\'><input type=\'hidden\' name=\'biz_content\' value=\'{"product_code":"FAST_INSTANT_TRADE_PAY","body":"官方个回复哈","subject":"测试韩国和江满江红还根据","total_amount":"0.01","out_trade_no":"20182904810619"}\'/><input type=\'hidden\' name=\'app_id\' value=\'2016091200495132\'/><input type=\'hidden\' name=\'version\' value=\'1.0\'/><input type=\'hidden\' name=\'format\' value=\'json\'/><input type=\'hidden\' name=\'sign_type\' value=\'RSA2\'/><input type=\'hidden\' name=\'method\' value=\'alipay.trade.page.pay\'/><input type=\'hidden\' name=\'timestamp\' value=\'2018-02-08 16:51:02\'/><input type=\'hidden\' name=\'alipay_sdk\' value=\'alipay-sdk-php-20161101\'/><input type=\'hidden\' name=\'notify_url\' value=\'http://shop.mylawcase.cn/modules/alipay/testpay/notify_url.php\'/><input type=\'hidden\' name=\'return_url\' value=\'http://shop.mylawcase.cn/modules/alipay/testpay/return_url.php\'/><input type=\'hidden\' name=\'charset\' value=\'UTF-8\'/><input type=\'hidden\' name=\'sign\' value=\'gEvfPiZMDbQ7kDbKjaSeOXKSjGA4KhSmJJQjpDGK6VY/3sWdq3UMN9VVhDcnFL/pbeqzHeqIgCZMYNnFB0hnIph+B3bRBLoRgvfD0tiud5lYyNtyq4zSbm+INdO48dtropsJyZeNbZQPkfiMqe5vOpJ4iH/V8vP46Ge9Yz7XHwFWOuqUkyn1Hlw9mhrma6hkxVLp1tfX9wAYCcTCkqoYae5nwtbgLiVlC/vYosO7Aq+NMGF3EoegR6mMi4S5/intnaf2Odg0f+/PHoEuzft4HEclZzyok6UxknF5pLWLU+GShQFXXhMDUftjc/5lDoMdSPK4UDdyg474AvOysAHDlA==\'/><input type=\'submit\' value=\'ok\' style=\'display:none;\'\'></form><script>document.forms[\'alipaysubmit\'].submit();</script>'
+2018-02-08 16:51:25  {"product_code":"FAST_INSTANT_TRADE_PAY","body":"官方个回复哈","subject":"高峰会法规和发好","total_amount":"1","out_trade_no":"2018290516127"}
+2018-02-08 16:51:25  response: '<form id=\'alipaysubmit\' name=\'alipaysubmit\' action=\'https://openapi.alipaydev.com/gateway.do?charset=UTF-8\' method=\'POST\'><input type=\'hidden\' name=\'biz_content\' value=\'{"product_code":"FAST_INSTANT_TRADE_PAY","body":"官方个回复哈","subject":"高峰会法规和发好","total_amount":"1","out_trade_no":"2018290516127"}\'/><input type=\'hidden\' name=\'app_id\' value=\'2016091200495132\'/><input type=\'hidden\' name=\'version\' value=\'1.0\'/><input type=\'hidden\' name=\'format\' value=\'json\'/><input type=\'hidden\' name=\'sign_type\' value=\'RSA2\'/><input type=\'hidden\' name=\'method\' value=\'alipay.trade.page.pay\'/><input type=\'hidden\' name=\'timestamp\' value=\'2018-02-08 16:51:25\'/><input type=\'hidden\' name=\'alipay_sdk\' value=\'alipay-sdk-php-20161101\'/><input type=\'hidden\' name=\'notify_url\' value=\'http://shop.mylawcase.cn/modules/alipay/testpay/notify_url.php\'/><input type=\'hidden\' name=\'return_url\' value=\'http://shop.mylawcase.cn/modules/alipay/testpay/return_url.php\'/><input type=\'hidden\' name=\'charset\' value=\'UTF-8\'/><input type=\'hidden\' name=\'sign\' value=\'aTWTdkuTmeK29+sgGHiHWESUFLxBK7miGSdMzfZSgIZrNK/EI3IaNeUiIYPqtu951an//5Ose2GvoFSg9XBjlZTOYBB9c2GC23sV+rhbz12GjXujM0S0tAExDJVn0Dbqo56jWDcy/E4dbqLreUGbeyx7QzoAhxwIU00vSNfBEb5vSd0+BnCpP2zxZFT9KCaubCLM0ShykxAgr4o1RFE2SYTRGOw4uDK1rMgX9ox8Nq+Kwuj+43qIqkj75h+IHGlVh2MjjJ2u7+6ekVbAvHoYhooxdVLOLYbzwZyQ3r+6I9axnp/zh42a8r6Kc1olIzuZpFdlSakACYu2rtrJkjp4VQ==\'/><input type=\'submit\' value=\'ok\' style=\'display:none;\'\'></form><script>document.forms[\'alipaysubmit\'].submit();</script>'
+2018-02-08 16:52:28  {"out_trade_no":"2018290516127","trade_no":""}
+2018-02-08 16:52:47  {"product_code":"FAST_INSTANT_TRADE_PAY","body":"官方个回复哈","subject":"高峰会法规和发好","total_amount":"1","out_trade_no":"2018290516127"}
+2018-02-08 16:52:47  response: '<form id=\'alipaysubmit\' name=\'alipaysubmit\' action=\'https://openapi.alipaydev.com/gateway.do?charset=UTF-8\' method=\'POST\'><input type=\'hidden\' name=\'biz_content\' value=\'{"product_code":"FAST_INSTANT_TRADE_PAY","body":"官方个回复哈","subject":"高峰会法规和发好","total_amount":"1","out_trade_no":"2018290516127"}\'/><input type=\'hidden\' name=\'app_id\' value=\'2016091200495132\'/><input type=\'hidden\' name=\'version\' value=\'1.0\'/><input type=\'hidden\' name=\'format\' value=\'json\'/><input type=\'hidden\' name=\'sign_type\' value=\'RSA2\'/><input type=\'hidden\' name=\'method\' value=\'alipay.trade.page.pay\'/><input type=\'hidden\' name=\'timestamp\' value=\'2018-02-08 16:52:47\'/><input type=\'hidden\' name=\'alipay_sdk\' value=\'alipay-sdk-php-20161101\'/><input type=\'hidden\' name=\'notify_url\' value=\'http://shop.mylawcase.cn/modules/alipay/testpay/notify_url.php\'/><input type=\'hidden\' name=\'return_url\' value=\'http://shop.mylawcase.cn/modules/alipay/testpay/return_url.php\'/><input type=\'hidden\' name=\'charset\' value=\'UTF-8\'/><input type=\'hidden\' name=\'sign\' value=\'PBZsns4obC3fL+momiBCXVcXJIOpAuPqh1vnvwUPeIyCjsERP0w8kVneJRfDNv7BEx4dpNl8SYvx+5YYnEBW3jHrXvaHYD7r1gu9yDJFVAXrK8gKsjIHtl10u6q+QuJ4k/9u2mtf/umVbWxD6kPLpR7TQjNU3v8ywBNcW3m0S01dCp9sAi9Lh6RbPcvmOoRVh+Mv9NM4zNJweeYFqYCl0uXUGLJwVCMgTFfQgvREdW1jhSFDO+Yymfchf3YlPfOk47vsYM2p7nfXeCAQPvQxnM824kYuI0mqbEeR8HjdX3j4hIweo02rBR2eQd68wmQ1rX+emi82zbYoUGhbn/Zwag==\'/><input type=\'submit\' value=\'ok\' style=\'display:none;\'\'></form><script>document.forms[\'alipaysubmit\'].submit();</script>'
+2018-02-08 16:56:14  array (
+  'gmt_create' => '2018-02-09 00:49:56',
+  'charset' => 'UTF-8',
+  'gmt_payment' => '2018-02-09 00:50:10',
+  'notify_time' => '2018-02-09 00:56:04',
+  'subject' => '测试',
+  'sign' => 'lQwA0eeWh5tnUoyTw3heK2ugDz9nfA+cpyg4hlO4TCsbfe3Oq6B3aqxIyoTZN9quIP1507PeplmCykqGGU33gnB8hhXJMXqLHMBWFReqVLZiBfEsxHQFQFGtiajl0+/e3KqCEPRqS2KKrJ/SubK784Yf6HO8igSw5KMj3iUauHYqWSy2bkjY3jFXDZkU/kr6xg5qLyaJDModB2l9m15wclLnL7p/elgf+JUp9THIrEbgxGKwYl9/hNS10Air27Glvr/vA3W0zDzsX+Iz+YTcpBdji1Vq11yaXUi+JFvadNvBqNfMjp/DChPVFm/HuulpYFtiaK6Iy/yBJ+UW8TWThA==',
+  'buyer_id' => '2088102175676555',
+  'body' => '官方个回复哈',
+  'invoice_amount' => '0.01',
+  'version' => '1.0',
+  'notify_id' => 'f3b2a89b7f8af8bbeaf1afb32f13aeek8u',
+  'fund_bill_list' => '[{"amount":"0.01","fundChannel":"ALIPAYACCOUNT"}]',
+  'notify_type' => 'trade_status_sync',
+  'out_trade_no' => '20182904810619',
+  'total_amount' => '0.01',
+  'trade_status' => 'TRADE_SUCCESS',
+  'trade_no' => '2018020921001004550200426580',
+  'auth_app_id' => '2016091200495132',
+  'receipt_amount' => '0.01',
+  'point_amount' => '0.00',
+  'app_id' => '2016091200495132',
+  'buyer_pay_amount' => '0.01',
+  'sign_type' => 'RSA2',
+  'seller_id' => '2088102175316125',
+)
+2018-02-08 16:56:31  array (
+  'gmt_create' => '2018-02-09 00:49:56',
+  'charset' => 'UTF-8',
+  'gmt_payment' => '2018-02-09 00:50:10',
+  'notify_time' => '2018-02-09 00:56:20',
+  'subject' => '测试',
+  'sign' => 'RbV5d+2kxsur1o0Wy7NaXBsdSUsQMVp2w3bnFqgeXtMX/cli+yjI0oP/XEuE4WitX7Eka7zScAGOWto/8iRaUqIL9lbeF85YBn09DaZNIoyzDe1cm9V7K8SSd4JZ2NvU8tbyZc616KI0ZxdDMixc1se9B5mJIj0gde0vSpn5GXeAo0/cfKIPOQoQUfuGuaYUn2h23M/oemecpSvg355rCSmeTpvHY7X8i7lGbU4cVgPQPZMsURW+/NL0oP4KUOUl8ngJ1DdOAXgNWIfaa4JNfzeFYu6GrEhYibDQz00Ta0knQqcsCAPfkgtpZNcXkhEzk8YfDuIv2OpvIuwyIJM4QA==',
+  'buyer_id' => '2088102175676555',
+  'body' => '官方个回复哈',
+  'invoice_amount' => '0.01',
+  'version' => '1.0',
+  'notify_id' => 'f3b2a89b7f8af8bbeaf1afb32f13aeek8u',
+  'fund_bill_list' => '[{"amount":"0.01","fundChannel":"ALIPAYACCOUNT"}]',
+  'notify_type' => 'trade_status_sync',
+  'out_trade_no' => '20182904810619',
+  'total_amount' => '0.01',
+  'trade_status' => 'TRADE_SUCCESS',
+  'trade_no' => '2018020921001004550200426580',
+  'auth_app_id' => '2016091200495132',
+  'receipt_amount' => '0.01',
+  'point_amount' => '0.00',
+  'app_id' => '2016091200495132',
+  'buyer_pay_amount' => '0.01',
+  'sign_type' => 'RSA2',
+  'seller_id' => '2088102175316125',
+)
+2018-02-08 17:09:01  array (
+  'gmt_create' => '2018-02-09 01:08:40',
+  'charset' => 'UTF-8',
+  'gmt_payment' => '2018-02-09 01:08:49',
+  'notify_time' => '2018-02-09 01:08:51',
+  'subject' => '高峰会法规和发好',
+  'sign' => 'HaNPUIWJSrDYfcbJE+1A++fYqCcqRvabTTDWQZeQsSJHo4FKCyeTFvtXbaPfcINq4OpK6NdN88EQCmFZcpCfjoSASN7FXLnf7noYIqm+ay/0Rt//fGkREbL+ygwZCU7hivCWGI5cNPSlC6PJW2/bCbqttIcKZjmhN3qRQDnm78Vh/mt1W14TK4VxuABceQt9hq2zQGy/AeAnoPPATS93Nd9k/JqbeKR8tOxNbJvK8XFQ1wby9rbBFd5iE/j8i6K7Ck9e0fpYCdAM1gObmMnjjvBHmE0/lRqzsLwGLUI+X/YVq+P+YbVGB8WS9Fkybgf+SKHvONP5bWEBQvXRqod73w==',
+  'buyer_id' => '2088102175676555',
+  'body' => '官方个回复哈',
+  'invoice_amount' => '1.00',
+  'version' => '1.0',
+  'notify_id' => '76284aba2d481d77a86d1b01a901cefk8u',
+  'fund_bill_list' => '[{"amount":"1.00","fundChannel":"ALIPAYACCOUNT"}]',
+  'notify_type' => 'trade_status_sync',
+  'out_trade_no' => '2018290516127',
+  'total_amount' => '1.00',
+  'trade_status' => 'TRADE_SUCCESS',
+  'trade_no' => '2018020921001004550200426426',
+  'auth_app_id' => '2016091200495132',
+  'receipt_amount' => '1.00',
+  'point_amount' => '0.00',
+  'app_id' => '2016091200495132',
+  'buyer_pay_amount' => '1.00',
+  'sign_type' => 'RSA2',
+  'seller_id' => '2088102175316125',
+)
+2018-02-09 03:38:53  {"product_code":"FAST_INSTANT_TRADE_PAY","body":"测试帐篷","subject":"测试谁结婚卡","total_amount":"0.01","out_trade_no":"201829113832432"}
+2018-02-09 03:38:53  response: '<form id=\'alipaysubmit\' name=\'alipaysubmit\' action=\'https://openapi.alipaydev.com/gateway.do?charset=UTF-8\' method=\'POST\'><input type=\'hidden\' name=\'biz_content\' value=\'{"product_code":"FAST_INSTANT_TRADE_PAY","body":"测试帐篷","subject":"测试谁结婚卡","total_amount":"0.01","out_trade_no":"201829113832432"}\'/><input type=\'hidden\' name=\'app_id\' value=\'2016091200495132\'/><input type=\'hidden\' name=\'version\' value=\'1.0\'/><input type=\'hidden\' name=\'format\' value=\'json\'/><input type=\'hidden\' name=\'sign_type\' value=\'RSA2\'/><input type=\'hidden\' name=\'method\' value=\'alipay.trade.page.pay\'/><input type=\'hidden\' name=\'timestamp\' value=\'2018-02-09 03:38:53\'/><input type=\'hidden\' name=\'alipay_sdk\' value=\'alipay-sdk-php-20161101\'/><input type=\'hidden\' name=\'notify_url\' value=\'http://shop.mylawcase.cn/modules/alipay/testpay/notify_url.php\'/><input type=\'hidden\' name=\'return_url\' value=\'http://shop.mylawcase.cn/modules/alipay/testpay/return_url.php\'/><input type=\'hidden\' name=\'charset\' value=\'UTF-8\'/><input type=\'hidden\' name=\'sign\' value=\'BPFbbYJ2HL3sbSYeW3izRoQYFZby4t7XONQTx4BPrvFSEXpW7vSOEGXqpT2WYJwxNmU4BlBb+eUt6sKlDOmWxbQFGjiMt7iuWlQ5fI7cBwBmB6EIhksp3/oiIFcePtatHLecn6mneHVPNZG9Z2/3o2fcnWtJiLjXmq3OAOeJ0Nr7SPCs9mLjtpFa8xwEpv+j//sV/AsrpsBYz11747qX6S2BdwvKpU2tnxR13VYl9d6ee7dAHLDzziItGU1sE/CLgaeUeZGmU0WwFoKYqVNalUEzibq1T2/6CyFfeUhgtlsickHKCfcWT56kL7CthCWe9iXwxDMH2SoTO5Cn+4PClA==\'/><input type=\'submit\' value=\'ok\' style=\'display:none;\'\'></form><script>document.forms[\'alipaysubmit\'].submit();</script>'
+2018-02-09 03:40:24  {"product_code":"FAST_INSTANT_TRADE_PAY","body":"测试帐篷","subject":"测试谁结婚卡","total_amount":"0.01","out_trade_no":"201829113832432"}
+2018-02-09 03:40:24  response: '<form id=\'alipaysubmit\' name=\'alipaysubmit\' action=\'https://openapi.alipaydev.com/gateway.do?charset=UTF-8\' method=\'POST\'><input type=\'hidden\' name=\'biz_content\' value=\'{"product_code":"FAST_INSTANT_TRADE_PAY","body":"测试帐篷","subject":"测试谁结婚卡","total_amount":"0.01","out_trade_no":"201829113832432"}\'/><input type=\'hidden\' name=\'app_id\' value=\'2016091200495132\'/><input type=\'hidden\' name=\'version\' value=\'1.0\'/><input type=\'hidden\' name=\'format\' value=\'json\'/><input type=\'hidden\' name=\'sign_type\' value=\'RSA2\'/><input type=\'hidden\' name=\'method\' value=\'alipay.trade.page.pay\'/><input type=\'hidden\' name=\'timestamp\' value=\'2018-02-09 03:40:24\'/><input type=\'hidden\' name=\'alipay_sdk\' value=\'alipay-sdk-php-20161101\'/><input type=\'hidden\' name=\'notify_url\' value=\'http://shop.mylawcase.cn/modules/alipay/testpay/notify_url.php\'/><input type=\'hidden\' name=\'return_url\' value=\'http://shop.mylawcase.cn/modules/alipay/testpay/return_url.php\'/><input type=\'hidden\' name=\'charset\' value=\'UTF-8\'/><input type=\'hidden\' name=\'sign\' value=\'bmLqoXk3ZkILwXhWMpM9hjKP4sSJoB5Ftgh5NogOqqvyoDTA7L6jQW4ADgvEMShV33JjnpySjhCbyj2n5j5aOnnKWjt/j/VQPrjT+RUbVmCQuqQLRsQWXsa6X+XkPMFECv1PkaQSs7jevUkbEENTEYR/j0PIvRWBr/Eb9lUxPNxrN+gax5ZY5RmMLvFW0JfLWN69C6gSqM5aEvzaHN3s8Js/Dw9fswMa2lCmMcPji+6aQO5FZy6j6UWdFwQM4BrNYtrQGwnAN1abQlka4Se6KlApWEdah1HEH/Dd83d27C5IeTj7nzmfRerC3aVPgrlGV2HziowlI9DxBwWErIc36g==\'/><input type=\'submit\' value=\'ok\' style=\'display:none;\'\'></form><script>document.forms[\'alipaysubmit\'].submit();</script>'
+2018-02-09 03:40:47  {"product_code":"FAST_INSTANT_TRADE_PAY","body":"测试帐篷","subject":"测试谁结婚卡","total_amount":"0.01","out_trade_no":"201829113832432"}
+2018-02-09 03:40:47  response: '<form id=\'alipaysubmit\' name=\'alipaysubmit\' action=\'https://openapi.alipaydev.com/gateway.do?charset=UTF-8\' method=\'POST\'><input type=\'hidden\' name=\'biz_content\' value=\'{"product_code":"FAST_INSTANT_TRADE_PAY","body":"测试帐篷","subject":"测试谁结婚卡","total_amount":"0.01","out_trade_no":"201829113832432"}\'/><input type=\'hidden\' name=\'app_id\' value=\'2016091200495132\'/><input type=\'hidden\' name=\'version\' value=\'1.0\'/><input type=\'hidden\' name=\'format\' value=\'json\'/><input type=\'hidden\' name=\'sign_type\' value=\'RSA2\'/><input type=\'hidden\' name=\'method\' value=\'alipay.trade.page.pay\'/><input type=\'hidden\' name=\'timestamp\' value=\'2018-02-09 03:40:47\'/><input type=\'hidden\' name=\'alipay_sdk\' value=\'alipay-sdk-php-20161101\'/><input type=\'hidden\' name=\'notify_url\' value=\'http://shop.mylawcase.cn/modules/alipay/testpay/notify_url.php\'/><input type=\'hidden\' name=\'return_url\' value=\'http://shop.mylawcase.cn/modules/alipay/testpay/return_url.php\'/><input type=\'hidden\' name=\'charset\' value=\'UTF-8\'/><input type=\'hidden\' name=\'sign\' value=\'OdNdFoQUEYtagPFRBQ6tXQFOWLKJXYvEsIQdjRpkImA8P616eRZX9EISbnuEXFRhJ2YK5dquaJYM2jQTdPNDA19X4btUQw5OPfNHJK+VulNyHpFQB+3Gnbe2kSQeMBYkqRi079ZV/gmfrTBYpc0olT1pXxbENtaSYBMO68nANqr07wxpZbt5LA2YH/ALS4w04a5QIdKvOkKPfHcy36VXnTZ5xCcPZKNjpweUyBY/pbThGnsN5R4SYu1caw2ImXpJ6vkTi8zdlYiAmqwlXMS+PpHBpgCt8kIV0vjc+XAume6EliT2bevZdcu2OarJqMLKhBjorMq+iLYA/XIRld1AnA==\'/><input type=\'submit\' value=\'ok\' style=\'display:none;\'\'></form><script>document.forms[\'alipaysubmit\'].submit();</script>'
+2018-02-09 03:45:06  {"product_code":"FAST_INSTANT_TRADE_PAY","body":"大家卡的空间","subject":"测试吉安等哈多好看教案上的","total_amount":"5","out_trade_no":"201829114444875"}
+2018-02-09 03:45:06  response: '<form id=\'alipaysubmit\' name=\'alipaysubmit\' action=\'https://openapi.alipaydev.com/gateway.do?charset=UTF-8\' method=\'POST\'><input type=\'hidden\' name=\'biz_content\' value=\'{"product_code":"FAST_INSTANT_TRADE_PAY","body":"大家卡的空间","subject":"测试吉安等哈多好看教案上的","total_amount":"5","out_trade_no":"201829114444875"}\'/><input type=\'hidden\' name=\'app_id\' value=\'2016091200495132\'/><input type=\'hidden\' name=\'version\' value=\'1.0\'/><input type=\'hidden\' name=\'format\' value=\'json\'/><input type=\'hidden\' name=\'sign_type\' value=\'RSA2\'/><input type=\'hidden\' name=\'method\' value=\'alipay.trade.page.pay\'/><input type=\'hidden\' name=\'timestamp\' value=\'2018-02-09 03:45:06\'/><input type=\'hidden\' name=\'alipay_sdk\' value=\'alipay-sdk-php-20161101\'/><input type=\'hidden\' name=\'notify_url\' value=\'http://shop.mylawcase.cn/modules/alipay/testpay/notify_url.php\'/><input type=\'hidden\' name=\'return_url\' value=\'http://shop.mylawcase.cn/modules/alipay/testpay/return_url.php\'/><input type=\'hidden\' name=\'charset\' value=\'UTF-8\'/><input type=\'hidden\' name=\'sign\' value=\'nDN399qaf64H8YtNmLIdS5IbHc3Sh8AA2KEuyyBSMCqUZyz/mxBJ4cqaGyFB8Rt9SELfQTbAJQ8U+WrNPJ4qi5hrKq4WYkWeIVFv2I3Sc4hGrK+pTCNLJN56fTkaAP+rxrM3J/0+jv5Ujvnt0SGbYmq72ZU3q20TkNHYVrVNFLqvh8qXGQQ7dLBeP2vkGXzKv45hwbAvQbTcIEICIMmF7A0QrnriJ+nHEWQzHGx07WbtJS7nu3A76ZJnx7mrIFJ8Xr0i9sDDNzaoHEILPaGSEtSn4QufY3pycv3Q1m81LZ9rpPbgtYmUog7KRKyENx0B9xxIriEjsEpe9BkN9sgJOg==\'/><input type=\'submit\' value=\'ok\' style=\'display:none;\'\'></form><script>document.forms[\'alipaysubmit\'].submit();</script>'
+2018-02-09 03:46:02  array (
+  'gmt_create' => '2018-02-09 11:45:39',
+  'charset' => 'UTF-8',
+  'gmt_payment' => '2018-02-09 11:45:51',
+  'notify_time' => '2018-02-09 11:45:52',
+  'subject' => '测试吉安等哈多好看教案上的',
+  'sign' => 'W5NJV236k6xzx2QeoSfVZcgoriyRyVOE9YBACghytKQDS1lTNeOPo6cVQQWVhHVvWaCzcNfLLQuccm+klu+zRcy+PWcNrUpoyFpLuH9B+34Ygd/QUGnaT8AvFOz6oal33emjb4LeQDo2769UtuXj/xTtVon/DExFckAYPJnzhimVmy+Z1Z9wk8ESnwrrqg9PiAbId9yogim8X/fzTjH6PQIChSwvgV2PVWbY9cBZ3RM9OvJalcJ8WobJARMBVOcCH5p9HhCT5E40jR/NPDs5cyTzziSyiADsh+91YWjzwpQZog3OyWbI6uhyCZ3XJG8/69S2NibWhdAUp49S+wzHiQ==',
+  'buyer_id' => '2088102175676555',
+  'body' => '大家卡的空间',
+  'invoice_amount' => '5.00',
+  'version' => '1.0',
+  'notify_id' => '3625794ac7f107450aa73fb126f469dk8u',
+  'fund_bill_list' => '[{"amount":"5.00","fundChannel":"ALIPAYACCOUNT"}]',
+  'notify_type' => 'trade_status_sync',
+  'out_trade_no' => '201829114444875',
+  'total_amount' => '5.00',
+  'trade_status' => 'TRADE_SUCCESS',
+  'trade_no' => '2018020921001004550200426691',
+  'auth_app_id' => '2016091200495132',
+  'receipt_amount' => '5.00',
+  'point_amount' => '0.00',
+  'app_id' => '2016091200495132',
+  'buyer_pay_amount' => '5.00',
+  'sign_type' => 'RSA2',
+  'seller_id' => '2088102175316125',
+)
+2018-02-09 03:51:13  {"product_code":"FAST_INSTANT_TRADE_PAY","body":"sfdadasda书法大赛的","subject":"测试大叔大婶","total_amount":"0.01","out_trade_no":"201829115053644"}
+2018-02-09 03:51:13  response: 'https://openapi.alipaydev.com/gateway.do?alipay_sdk=alipay-sdk-php-20161101&app_id=2016091200495132&biz_content=%7B%22product_code%22%3A%22FAST_INSTANT_TRADE_PAY%22%2C%22body%22%3A%22sfdadasda%E4%B9%A6%E6%B3%95%E5%A4%A7%E8%B5%9B%E7%9A%84%22%2C%22subject%22%3A%22%E6%B5%8B%E8%AF%95%E5%A4%A7%E5%8F%94%E5%A4%A7%E5%A9%B6%22%2C%22total_amount%22%3A%220.01%22%2C%22out_trade_no%22%3A%22201829115053644%22%7D&charset=UTF-8&format=json&method=alipay.trade.page.pay&notify_url=http%3A%2F%2Fshop.mylawcase.cn%2Fmodules%2Falipay%2Ftestpay%2Fnotify_url.php&return_url=http%3A%2F%2Fshop.mylawcase.cn%2Fmodules%2Falipay%2Ftestpay%2Freturn_url.php&sign=zZSn377f2w6Kg3KwWKk1%2BIGCDmsb%2Bzk0U2eYOATUPk5M%2BuQ0oeF83cuUcFWtbJaCKFqSlDOGQZBXVlT%2BfLjZzQCmJWY1b18P9twOTzPPnFc1XCzK%2B99LBWmlH4TVFN2DvqsoIUxEWHmkwjrObopdP3sKXSds7fUawt6LrWFwHYSzX%2FedVMSGYrsVx5UFYFO59BBgXKidDsYbrtxZHiYvPKQqAIhyj6OTl7A%2F91EAlElZ3KiRS5MEkfZae03y87tBGI0dsoi3KZH06oxBcEGkOa3HUSdx1qvMO5H6sX%2FMdPY8fN3zKCYI68wJt9K1Mg78YVL%2FaLKtEvjnj5d97PLWjg%3D%3D&sign_type=RSA2&timestamp=2018-02-09+03%3A51%3A13&version=1.0'
+2018-02-09 03:56:13  {"product_code":"FAST_INSTANT_TRADE_PAY","body":"","subject":"测试","total_amount":"0.01","out_trade_no":"20182911562827"}
+2018-02-09 03:56:14  response: false
