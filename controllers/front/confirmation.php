@@ -47,7 +47,8 @@ class AlipayConfirmationModuleFrontController extends ModuleFrontController
         //if ($payment_response->getTradeStatus() == 'TRADE_FINISHED') {
         //校验签名是否合法
         $arr = $_GET;
-
+        $alipaySevice = new AlipayTradeService($config);
+        $result = $alipaySevice->check($arr);
         $cart = $this->context->cart;
         $authorized = false;
         foreach (Module::getPaymentModules() as $module) {

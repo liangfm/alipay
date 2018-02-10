@@ -40,12 +40,14 @@ require_once _PS_MODULE_DIR_ . 'alipay/alipay-sdk/config.php';
 require_once _PS_MODULE_DIR_ . 'alipay/alipay-sdk/pagepay/service/AlipayTradeService.php';
 $arr = $_POST;
 $alipaySevice = new AlipayTradeService($config);
+unset($arr['id_cart']);
+unset($arr['secure_key']);
 $alipaySevice->writeLog(var_export($_POST, true));
 $verfiy = $alipaySevice->check($arr);
 
 $alipay_notify = new AlipayNotify();
 $alipay_notify->getPostData();
-//$alipay_notify->writeLog('异步通知成功');
+$alipay_notify->writeLog('异步通知成功 '.$verfiy);
 //$alipay_notify->writeLog(var_export($alipay_notify,true));
 
 
@@ -76,7 +78,7 @@ switch ($alipay_notify->getNotifyType()) {
                 return;
             }*/
             if ($_POST['trade_status'] == 'TRADE_FINISHED') {
-                $alipaySevice->writeLog("交易完成TRADE_FINISHED");
+                $alipaySevice->writeLog("接收通知-交易完成TRADE_FINISHED");
                 //判断该笔订单是否在商户网站中已经做过处理
                 //如果没有做过处理，根据订单号（out_trade_no）在商户网站的订单系统中查到该笔订单的详细，并执行商户的业务程序
                 //请务必判断请求时的total_amount与通知时获取的total_fee为一致的
@@ -85,7 +87,7 @@ switch ($alipay_notify->getNotifyType()) {
                 //注意：
                 //退款日期超过可退款期限后（如三个月可退款），支付宝系统发送该交易状态通知
             } else if ($_POST['trade_status'] == 'TRADE_SUCCESS') {
-                $alipaySevice->writeLog("定单成功TRADE_SUCCESS");
+                $alipaySevice->writeLog("接收通知-定单成功TRADE_SUCCESS");
                 //判断该笔订单是否在商户网站中已经做过处理
                 //如果没有做过处理，根据订单号（out_trade_no）在商户网站的订单系统中查到该笔订单的详细，并执行商户的业务程序
                 //请务必判断请求时的total_amount与通知时获取的total_fee为一致的
@@ -108,19 +110,22 @@ switch ($alipay_notify->getNotifyType()) {
                     false,
                     $alipay_notify->getSecureKey()
                 );
+                $alipaySevice->writeLog("保存交易通知成功");
                 $id_order = (int)Order::getOrderByCartId($alipay_notify->getIdCart());
                 if ($id_order) {
                     $alipay_notify->saveOrder($id_order);
                     header('HTTP/1.1 200 OK');
                     echo "success";
                     exit;
+                }else{
+                    $alipaySevice->writeLog("通知支付宝失败-fail");
                 }
             } else {
-                $alipay_notify->writeLog("保存交易通知失败！");
+                $alipaySevice->writeLog("保存交易通知失败！");
             }
 
         } else {
-            $alipay_notify->writeLog("接收通知-签名认证失败！");
+            $alipaySevice->writeLog("接收通知-签名认证失败！");
         }
         header('HTTP/1.1 200 OK');
         echo "fail";
