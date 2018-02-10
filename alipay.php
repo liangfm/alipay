@@ -1,29 +1,31 @@
 <?php
 /**
-* 2007-2015 PrestaShop
-*
-* NOTICE OF LICENSE
-*
-* This source file is subject to the Academic Free License (AFL 3.0)
-* that is bundled with this package in the file LICENSE.txt.
-* It is also available through the world-wide-web at this URL:
-* http://opensource.org/licenses/afl-3.0.php
-* If you did not receive a copy of the license and are unable to
-* obtain it through the world-wide-web, please send an email
-* to license@prestashop.com so we can send you a copy immediately.
-*
-* DISCLAIMER
-*
-* Do not edit or add to this file if you wish to upgrade PrestaShop to newer
-* versions in the future. If you wish to customize PrestaShop for your
-* needs please refer to http://www.prestashop.com for more information.
-*
-*  @author    PrestaShop SA <contact@prestashop.com>
-*  @copyright 2007-2015 PrestaShop SA
-*  @license   http://opensource.org/licenses/afl-3.0.php  Academic Free License (AFL 3.0)
-*  International Registered Trademark & Property of PrestaShop SA
-*/
+ * 2007-2015 PrestaShop
+ *
+ * NOTICE OF LICENSE
+ *
+ * This source file is subject to the Academic Free License (AFL 3.0)
+ * that is bundled with this package in the file LICENSE.txt.
+ * It is also available through the world-wide-web at this URL:
+ * http://opensource.org/licenses/afl-3.0.php
+ * If you did not receive a copy of the license and are unable to
+ * obtain it through the world-wide-web, please send an email
+ * to license@prestashop.com so we can send you a copy immediately.
+ *
+ * DISCLAIMER
+ *
+ * Do not edit or add to this file if you wish to upgrade PrestaShop to newer
+ * versions in the future. If you wish to customize PrestaShop for your
+ * needs please refer to http://www.prestashop.com for more information.
+ *
+ * @author    PrestaShop SA <contact@prestashop.com>
+ * @copyright 2007-2015 PrestaShop SA
+ * @license   http://opensource.org/licenses/afl-3.0.php  Academic Free License (AFL 3.0)
+ *  International Registered Trademark & Property of PrestaShop SA
+ */
+
 use PrestaShop\PrestaShop\Core\Payment\PaymentOption;
+
 class Alipay extends PaymentModule
 {
     /**
@@ -40,7 +42,6 @@ class Alipay extends PaymentModule
         $this->version = '1.0.4';
         $this->author = 'Alipay';
         $this->need_instance = 0;
-	$this->controllers = array('payment', 'validation');
         $this->bootstrap = true;
         $this->module_key = '4661b6e2596bc617243143e7878f17e2';
 
@@ -52,7 +53,7 @@ class Alipay extends PaymentModule
         $this->confirmUninstall = $this->l('Are you sure you want to uninstall Alipay?');
 
         $this->limited_currencies = array(
-	    'CNY',
+            'CNY',
             'GBP',
             'HKD',
             'USD',
@@ -82,7 +83,7 @@ class Alipay extends PaymentModule
      */
     public function install()
     {
-        include_once(_PS_MODULE_DIR_.'alipay/api/loader.php');
+        include_once(_PS_MODULE_DIR_ . 'alipay/api/loader.php');
 
         if (extension_loaded('curl') == false) {
             $this->_errors[] = $this->l('You have to enable the cURL extension on your server to install this module');
@@ -102,14 +103,14 @@ class Alipay extends PaymentModule
         Configuration::updateValue('ALIPAY_SERVICE_EXCHANGE_RATE', 'forex_rate_file');
         Configuration::updateValue('ALIPAY_SERVICE_NOTIFY_VERIFY', 'notify_verify');
 
-        $admin_order_hook = (_PS_VERSION_ < '1.6' ? 'displayAdminOrder':'displayAdminOrderLeft');
+        $admin_order_hook = (_PS_VERSION_ < '1.6' ? 'displayAdminOrder' : 'displayAdminOrderLeft');
         return parent::install() &&
-        AlipayTools::createDb() &&
-       // $this->registerHook('header') &&
-       // $this->registerHook('backOfficeHeader') &&
-       // $this->registerHook('payment') &&
-        $this->registerHook('paymentOptions') &&
-        $this->registerHook('paymentReturn');
+            AlipayTools::createDb() &&
+            // $this->registerHook('header') &&
+            // $this->registerHook('backOfficeHeader') &&
+            // $this->registerHook('payment') &&
+            $this->registerHook('paymentOptions') &&
+            $this->registerHook('paymentReturn');
         //$this->registerHook($admin_order_hook);
     }
 
@@ -133,27 +134,27 @@ class Alipay extends PaymentModule
 
         return parent::uninstall();
     }
-	
-public function hookPaymentOptions($params)
+
+    public function hookPaymentOptions($params)
     {
         if (!$this->active) {
             return;
         }
-       /* if (!$this->checkCurrency($params['cart'])) {
-            return;
-        }
+        /* if (!$this->checkCurrency($params['cart'])) {
+             return;
+         }
 
-        $this->smarty->assign(
-            $this->getTemplateVars()
-        );*/
+         $this->smarty->assign(
+             $this->getTemplateVars()
+         );*/
 
         $newOption = new PaymentOption();
         $newOption->setModuleName($this->name)
-                ->setCallToActionText('使用支付宝安全付款')
-                ->setLogo(Media::getMediaPath(_PS_MODULE_DIR_.$this->name.'/logo.png'))
-		//->setAction($this->context->link->getModuleLink($this->name, 'index.php?hookPayment=', $params),true);
-                ->setAction($this->context->link->getModuleLink($this->name, 'pay',$params, true));
-                //->setAdditionalInformation($this->fetch('module:ps_checkpayment/views/templates/front/payment_infos.tpl'));
+            ->setCallToActionText('使用支付宝安全付款')
+            ->setLogo(Media::getMediaPath(_PS_MODULE_DIR_ . $this->name . '/logo.png'))
+            //->setAction($this->context->link->getModuleLink($this->name, 'index.php?hookPayment=', $params),true);
+            ->setAction($this->context->link->getModuleLink($this->name, 'pay', $params, true));
+        //->setAdditionalInformation($this->fetch('module:ps_checkpayment/views/templates/front/payment_infos.tpl'));
 
         return [$newOption];
     }
@@ -164,7 +165,7 @@ public function hookPaymentOptions($params)
      */
     public function getContent()
     {
-        require_once(dirname(__FILE__).'/AlipayBackEndForm.php');
+        require_once(dirname(__FILE__) . '/AlipayBackEndForm.php');
         /**
          * If values have been submitted in the form, process.
          */
@@ -185,26 +186,26 @@ public function hookPaymentOptions($params)
             $this->context->smarty->assign('curl', 1);
         }
 
-        $current_index = AdminController::$currentIndex.'&amp;configure='.$this->name
-            .'&token='.Tools::getAdminTokenLite('AdminModules');
+        $current_index = AdminController::$currentIndex . '&amp;configure=' . $this->name
+            . '&token=' . Tools::getAdminTokenLite('AdminModules');
         $this->context->smarty->assign('module_dir', $this->_path);
         $this->context->smarty->assign('current_index', $current_index);
-        $this->context->smarty->assign('old_version', (_PS_VERSION_ < '1.6' ? '1':'0'));
+        $this->context->smarty->assign('old_version', (_PS_VERSION_ < '1.6' ? '1' : '0'));
 
-        $output = $this->context->smarty->fetch($this->local_path.'views/templates/admin/backend.tpl');
+        $output = $this->context->smarty->fetch($this->local_path . 'views/templates/admin/backend.tpl');
         $back_end_form = new AlipayBackEndForm();
         $config_form = $back_end_form->renderConfigForm();
         $reconciliation_file_form = $back_end_form->renderReconciliationForm();
         $settlement_file_form = $back_end_form->renderSettlementForm();
         if (_PS_VERSION_ < '1.6') {
-            $exchange_form = $this->context->smarty->fetch($this->local_path.'views/templates/admin/exchange_rate.tpl');
-            $help_form = $this->context->smarty->fetch($this->local_path.'views/templates/admin/howto.tpl');
+            $exchange_form = $this->context->smarty->fetch($this->local_path . 'views/templates/admin/exchange_rate.tpl');
+            $help_form = $this->context->smarty->fetch($this->local_path . 'views/templates/admin/howto.tpl');
         } else {
             $exchange_form = $back_end_form->renderExchangeRateForm();
             $help_form = $back_end_form->renderHelpForm();
         }
-        return $this->confirmation_message.$output.$config_form.$help_form.$reconciliation_file_form
-        .$settlement_file_form.$exchange_form;
+        return $this->confirmation_message . $output . $config_form . $help_form . $reconciliation_file_form
+            . $settlement_file_form . $exchange_form;
     }
 
     /**
@@ -213,7 +214,7 @@ public function hookPaymentOptions($params)
     protected function getConfigFormValues()
     {
         return array(
-            'ALIPAY_LIVE_MODE'   => Configuration::get('ALIPAY_LIVE_MODE'),
+            'ALIPAY_LIVE_MODE' => Configuration::get('ALIPAY_LIVE_MODE'),
             'ALIPAY_PARTNER_ID' => Configuration::get('ALIPAY_PARTNER_ID'),
             'ALIPAY_SECRETE_KEY' => ConfigurationCore::get('ALIPAY_SECRETE_KEY')
         );
@@ -229,7 +230,7 @@ public function hookPaymentOptions($params)
             Configuration::updateValue($key, Tools::getValue($key));
         }
         $this->confirmation_message = (_PS_VERSION_ < '1.6' ?
-            '<div class="conf confirmation">'.$this->l('Settings updated').'</div>':
+            '<div class="conf confirmation">' . $this->l('Settings updated') . '</div>' :
             $this->displayConfirmation($this->l('Settings updated')));
     }
 
@@ -239,10 +240,10 @@ public function hookPaymentOptions($params)
     public function hookBackOfficeHeader()
     {
         if (Tools::getValue('configure') == $this->name || Tools::getValue('module_name') == $this->name) {
-            $this->context->controller->addJS($this->_path.'views/js/back.js');
-            $this->context->controller->addCSS($this->_path.'views/css/back.css');
+            $this->context->controller->addJS($this->_path . 'views/js/back.js');
+            $this->context->controller->addCSS($this->_path . 'views/css/back.css');
             if (_PS_VERSION_ < '1.6') {
-                $this->context->controller->addCSS($this->_path.'/views/css/back_15.css');
+                $this->context->controller->addCSS($this->_path . '/views/css/back_15.css');
             }
         }
     }
@@ -252,10 +253,10 @@ public function hookPaymentOptions($params)
      */
     public function hookHeader()
     {
-        $this->context->controller->addJS($this->_path.'/views/js/front.js');
-        $this->context->controller->addCSS($this->_path.'/views/css/front.css');
+        $this->context->controller->addJS($this->_path . '/views/js/front.js');
+        $this->context->controller->addCSS($this->_path . '/views/css/front.css');
         if (_PS_VERSION_ < '1.6') {
-            $this->context->controller->addCSS($this->_path.'/views/css/front_15.css');
+            $this->context->controller->addCSS($this->_path . '/views/css/front_15.css');
         }
     }
 
@@ -265,7 +266,7 @@ public function hookPaymentOptions($params)
      */
     public function hookPayment($params)
     {
-        include_once(_PS_MODULE_DIR_.'alipay/api/loader.php');
+        include_once(_PS_MODULE_DIR_ . 'alipay/api/loader.php');
 
         $currency_id = $params['cart']->id_currency;
         $currency = new Currency((int)$currency_id);
@@ -286,7 +287,7 @@ public function hookPaymentOptions($params)
         date_default_timezone_set('Asia/Hong_Kong');
         $payment_request = new PaymentRequest();
         $payment_request->setCurrency($currency->iso_code);
-        $payment_request->setPartnerTransactionId(date('YmdHis').$cart->id);
+        $payment_request->setPartnerTransactionId(date('YmdHis') . $cart->id);
         $payment_request->setGoodsDescription($this->getGoodsDescription());
         $payment_request->setGoodsName($this->getGoodsName($cart->id));
         $payment_request->setOrderGmtCreate(date('Y-m-d H:i:s'));
@@ -309,13 +310,13 @@ public function hookPaymentOptions($params)
      */
     public function hookPaymentReturn($params)
     {
-        include_once(_PS_MODULE_DIR_.'alipay/api/loader.php');
+        include_once(_PS_MODULE_DIR_ . 'alipay/api/loader.php');
 
         if ($this->active == false) {
             return;
         }
         $order = $params['order'];
-        var_dump(var_export($order));
+        //var_dump(var_export($order));
 
         if ($order->getCurrentOrderState()->id != Configuration::get('PS_OS_ERROR')) {
             $this->smarty->assign('status', 'ok');
@@ -323,7 +324,7 @@ public function hookPaymentOptions($params)
         $sql = new DbQuery();
         $sql->select('a.trade_no');
         $sql->from('alipay', 'a');
-        $sql->where('a.id_order='.(int)$params['order']->id);
+        $sql->where('a.id_order=' . (int)$params['order']->id);
         $trade_no = Db::getInstance()->getValue($sql);
 
         $this->smarty->assign(array(
@@ -331,8 +332,8 @@ public function hookPaymentOptions($params)
             'id_order' => $order->id,
             'reference' => $order->reference,
             'params' => $params,
-             'shop_name'=>array($this->context->shop->name),
-            'total' => Tools::displayPrice($order->total_paid,new Currency((int)$order->id_currency), false),
+            'shop_name' => array($this->context->shop->name),
+            'total' => Tools::displayPrice($order->total_paid, new Currency((int)$order->id_currency), false),
         ));
 
         return $this->display(__FILE__, 'views/templates/hook/confirmation.tpl');
@@ -340,7 +341,7 @@ public function hookPaymentOptions($params)
 
     public function hookDisplayAdminOrderLeft($params)
     {
-        include_once(_PS_MODULE_DIR_.'alipay/api/loader.php');
+        include_once(_PS_MODULE_DIR_ . 'alipay/api/loader.php');
 
         $transaction_details = $this->getTransactionDetails($params['id_order']);
         if (!$transaction_details || empty($transaction_details)) {
@@ -371,7 +372,7 @@ public function hookPaymentOptions($params)
             $this->context->smarty->assign(array(
                 'refunds' => $this->getRefunds($params['id_order']),
                 'transaction_details' => $vars,
-                'prestashop_version_15' => (_PS_VERSION_ < '1.6' ? 1:0)
+                'prestashop_version_15' => (_PS_VERSION_ < '1.6' ? 1 : 0)
             ));
             if (_PS_VERSION_ < '1.6') {
                 $this->context->controller->addCSS($this->_path . '/views/css/admin_15.css');
@@ -404,7 +405,7 @@ public function hookPaymentOptions($params)
         $products = $cart->getProducts();
         $goods_name = '';
         foreach ($products as $product) {
-            $goods_name .= $product['name'].', ';
+            $goods_name .= $product['name'] . ', ';
         }
         if ($goods_name) {
             return Tools::substr($goods_name, 0, -2);
@@ -420,8 +421,8 @@ public function hookPaymentOptions($params)
      */
     public function getNotifyUrl($secure_key, $id_cart)
     {
-        $shop_url = Tools::getHttpHost(true).__PS_BASE_URI__;
-        return $shop_url.'modules/alipay/notify_url.php?secure_key='.$secure_key.'&id_cart='.$id_cart;
+        $shop_url = Tools::getHttpHost(true) . __PS_BASE_URI__;
+        return $shop_url . 'modules/alipay/notify_url.php?secure_key=' . $secure_key . '&id_cart=' . $id_cart;
     }
 
     /**
@@ -432,9 +433,9 @@ public function hookPaymentOptions($params)
      */
     public function getReturnUrl($secure_key, $id_cart)
     {
-        $shop_url = Tools::getHttpHost(true).__PS_BASE_URI__;
-        return $shop_url.'index.php?fc=module&module='.$this->name
-        .'&controller=confirmation&secure_key='.$secure_key.'&id_cart='.$id_cart;
+        $shop_url = Tools::getHttpHost(true) . __PS_BASE_URI__;
+        return $shop_url . 'index.php?fc=module&module=' . $this->name
+            . '&controller=confirmation&secure_key=' . $secure_key . '&id_cart=' . $id_cart;
     }
 
     /**
@@ -443,7 +444,7 @@ public function hookPaymentOptions($params)
      */
     public function postProcessRefund($id_order, $transaction_details)
     {
-        include_once(_PS_MODULE_DIR_.'alipay/api/loader.php');
+        include_once(_PS_MODULE_DIR_ . 'alipay/api/loader.php');
 
         $service = Configuration::get('ALIPAY_SERVICE_REFUND');
         $credentials = AlipayTools::getCredentials($service, false);
@@ -489,7 +490,7 @@ public function hookPaymentOptions($params)
         $sql = new DbQuery();
         $sql->select('a.*');
         $sql->from('alipay', 'a');
-        $sql->where('a.id_order = '.(int)$id_order);
+        $sql->where('a.id_order = ' . (int)$id_order);
         return Db::getInstance()->getRow($sql);
     }
 
@@ -504,7 +505,7 @@ public function hookPaymentOptions($params)
         $sql = new DbQuery();
         $sql->select('ar.*');
         $sql->from('alipay_refund', 'ar');
-        $sql->where('ar.id_order = '.(int)$id_order);
+        $sql->where('ar.id_order = ' . (int)$id_order);
         return Db::getInstance()->executeS($sql);
     }
 
@@ -513,7 +514,7 @@ public function hookPaymentOptions($params)
      */
     public function postProcessExchangeRate()
     {
-        include_once(_PS_MODULE_DIR_.'alipay/api/loader.php');
+        include_once(_PS_MODULE_DIR_ . 'alipay/api/loader.php');
 
         $service = Configuration::get('ALIPAY_SERVICE_EXCHANGE_RATE');
         $credentials = AlipayTools::getCredentials($service, false);
@@ -529,7 +530,7 @@ public function hookPaymentOptions($params)
      */
     public function postProcessReconciliation()
     {
-        include_once(_PS_MODULE_DIR_.'alipay/api/loader.php');
+        include_once(_PS_MODULE_DIR_ . 'alipay/api/loader.php');
 
         $service = Configuration::get('ALIPAY_SERVICE_COMPARE_FILE');
         $credentials = AlipayTools::getCredentials($service, false);
@@ -554,7 +555,7 @@ public function hookPaymentOptions($params)
      */
     public function postProcessSettlementFile()
     {
-        include_once(_PS_MODULE_DIR_.'alipay/api/loader.php');
+        include_once(_PS_MODULE_DIR_ . 'alipay/api/loader.php');
 
         $service = Configuration::get('ALIPAY_SERVICE_LIQUIDATION_FILE');
         $credentials = AlipayTools::getCredentials($service, false);

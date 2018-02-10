@@ -83,8 +83,8 @@ class AlipayPayModuleFrontController extends ModuleFrontController
  	*/
 //	$response = $aop->pagePay($payRequestBuilder,$config['return_url'],$config['notify_url']);
 	$response = $aop->pagePay($payRequestBuilder,$this->getReturnUrl($cart->secure_key, $cart->id),
-	$config['notify_url']);
-	//$this->getNotifyUrl($cart->secure_key, $cart->id));
+//	$config['notify_url']);
+	$this->getNotifyUrl($cart->secure_key, $cart->id));
 	//输出表单
 	var_dump($response);
     }
