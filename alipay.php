@@ -151,9 +151,9 @@ class Alipay extends PaymentModule
         $newOption = new PaymentOption();
         $newOption->setModuleName($this->name)
             ->setCallToActionText('使用支付宝安全付款')
-            ->setLogo(Media::getMediaPath(_PS_MODULE_DIR_ . $this->name . '/logo.png'));
-            //->setAction($this->context->link->getModuleLink($this->name, 'index.php?hookPayment=', $params),true);
-            //->setAction($this->context->link->getModuleLink($this->name, 'pay', $params, true));
+            ->setLogo(Media::getMediaPath(_PS_MODULE_DIR_ . $this->name . '/logo.png'))
+           // ->setAction($this->context->link->getModuleLink($this->name, 'index.php?hookPayment=', $params),true);
+           ->setAction($this->context->link->getModuleLink($this->name, 'pay', $params, true));
         //->setAdditionalInformation($this->fetch('module:ps_checkpayment/views/templates/front/payment_infos.tpl'));
 
         return [$newOption];
