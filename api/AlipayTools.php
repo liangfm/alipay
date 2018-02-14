@@ -99,7 +99,7 @@ class AlipayTools
                     `notify_id` VARCHAR(50) NOT NULL,
                     `notify_date` DATETIME NULL DEFAULT NULL,
                     `sign` VARCHAR(50) NULL DEFAULT NULL,
-                    `sign_type` ENUM('md5','dsa') NULL DEFAULT NULL,
+                    `sign_type` VARCHAR(50) NULL DEFAULT NULL,
                     `partner_transaction_id` VARCHAR(50) NULL DEFAULT NULL,
                     `alipay_transaction_id` VARCHAR(50) NULL DEFAULT NULL,
                     PRIMARY KEY (`notify_id`),

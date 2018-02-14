@@ -68,8 +68,9 @@ class AlipayConfirmationModuleFrontController extends ModuleFrontController
 
         $currency = $this->context->currency;
         $total = (float)$cart->getOrderTotal(true, Cart::BOTH);
-
-        $this->module->validateOrder((int)$cart->id, Configuration::get('PS_OS_PAYMENT'), $total, $this->module->displayName, null, var_export($arr), (int)$currency->id, false, $customer->secure_key);
+        //notify_url.php 在通知页面已经validateOrder
+        //$this->module->validateOrder((int)$cart->id, Configuration::get('PS_OS_PAYMENT'), $total,
+        //$this->module->displayName, null, var_export($arr), (int)$currency->id, false, $customer->secure_key);
         Tools::redirect('index.php?controller=order-confirmation&id_cart=' . (int)$cart->id . '&id_module=' . (int)$this->module->id . '&id_order=' . $this->module->currentOrder . '&key=' . $customer->secure_key);
     }
 }
