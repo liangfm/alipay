@@ -108,7 +108,7 @@ class Alipay extends PaymentModule
             AlipayTools::createDb() &&
             // $this->registerHook('header') &&
             // $this->registerHook('backOfficeHeader') &&
-            $this->registerHook('payment') &&
+           //$this->registerHook('payment') &&
             $this->registerHook('paymentOptions') &&
             $this->registerHook('paymentReturn');
         //$this->registerHook($admin_order_hook);
@@ -267,7 +267,6 @@ class Alipay extends PaymentModule
     public function hookPayment($params)
     {
         include_once(_PS_MODULE_DIR_ . 'alipay/api/loader.php');
-         var_dump('正在调用：hookPayment');
         $currency_id = $params['cart']->id_currency;
         $currency = new Currency((int)$currency_id);
         $cart = new Cart($params['cart']->id);
