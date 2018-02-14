@@ -99,7 +99,7 @@ switch ($alipay_notify->getNotifyType()) {
                 $alipay = new Alipay();
                 $extra_vars = array();
                 $extra_vars['transaction_id'] = $alipay_notify->getTradeNo();
-                $alipay->validateOrder(
+               /* $alipay->validateOrder(
                     (int)$alipay_notify->getIdCart(),
                     Configuration::get('PS_OS_PAYMENT'),
                     $alipay_notify->getTotalFee(),
@@ -109,7 +109,7 @@ switch ($alipay_notify->getNotifyType()) {
                     null,
                     false,
                     $alipay_notify->getSecureKey()
-                );
+                );*/
                 $alipaySevice->writeLog("保存交易通知成功");
                 $id_order = (int)Order::getOrderByCartId($alipay_notify->getIdCart());
                 if ($id_order) {
