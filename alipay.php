@@ -108,7 +108,7 @@ class Alipay extends PaymentModule
             AlipayTools::createDb() &&
             // $this->registerHook('header') &&
             // $this->registerHook('backOfficeHeader') &&
-            // $this->registerHook('payment') &&
+            $this->registerHook('payment') &&
             $this->registerHook('paymentOptions') &&
             $this->registerHook('paymentReturn');
         //$this->registerHook($admin_order_hook);
@@ -151,9 +151,9 @@ class Alipay extends PaymentModule
         $newOption = new PaymentOption();
         $newOption->setModuleName($this->name)
             ->setCallToActionText('使用支付宝安全付款')
-            ->setLogo(Media::getMediaPath(_PS_MODULE_DIR_ . $this->name . '/logo.png'))
+            ->setLogo(Media::getMediaPath(_PS_MODULE_DIR_ . $this->name . '/logo.png'));
             //->setAction($this->context->link->getModuleLink($this->name, 'index.php?hookPayment=', $params),true);
-            ->setAction($this->context->link->getModuleLink($this->name, 'pay', $params, true));
+            //->setAction($this->context->link->getModuleLink($this->name, 'pay', $params, true));
         //->setAdditionalInformation($this->fetch('module:ps_checkpayment/views/templates/front/payment_infos.tpl'));
 
         return [$newOption];
@@ -267,7 +267,7 @@ class Alipay extends PaymentModule
     public function hookPayment($params)
     {
         include_once(_PS_MODULE_DIR_ . 'alipay/api/loader.php');
-
+         var_dump('正在调用：hookPayment');
         $currency_id = $params['cart']->id_currency;
         $currency = new Currency((int)$currency_id);
         $cart = new Cart($params['cart']->id);
