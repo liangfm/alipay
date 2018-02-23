@@ -67,13 +67,13 @@ class AlipayTradeService {
 	 * @param $notify_url 异步通知地址，公网可以访问
 	 * @return $response 支付宝返回的信息
  	*/
-	function pagePay($builder,$return_url,$notify_url) {
+	function pagePay($builder,$return_url,$notify_url,$isMobile) {
 	
 		$biz_content=$builder->getBizContent();
 		//打印业务参数
 		$this->writeLog($biz_content);
 	
-		$request = new AlipayTradePagePayRequest();
+		$request = isMobile?new AlipayTradeWapPayRequest():new AlipayTradePagePayRequest();
 	
 		$request->setNotifyUrl($notify_url);
 		$request->setReturnUrl($return_url);
